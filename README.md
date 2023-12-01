@@ -21,4 +21,5 @@ sudo modprobe xdma
 ## run tests
 ```bash
 ./test_general -i NITE -v 2
+./test-ddr.py
 ```
