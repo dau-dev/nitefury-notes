@@ -27,12 +27,14 @@ See [readme.md](https://github.com/RHSResearchLLC/NiteFury-and-LiteFury/blob/mas
 - 0x3000: mapped to XADC sensors
 - 0x10000: mapped to axi quad spi
 
+1100
+  
 ## other stuff
-- LED A1
-- LED A2
-- LED A3
-- LED A4
-- LED M2
+- LED A1: mapped to codeblinker.v
+- LED A2: mapped to bit 0 of gpio
+- LED A3: mapped to [user_lnk_up](https://docs.xilinx.com/r/en-US/pg195-pcie-dma/XDMA-Global-Ports) from xdma: "Output Active-High Identifies that the PCI Express core is linked up with a host device."
+- LED A4: mapped to [init_calib_complete](https://docs.xilinx.com/r/en-US/pg353-versal-acap-soft-ddr4-mem-ip/init_calib_complete) from MIG: "PHY asserts init_calib_complete when calibration is finished. The application has no need to wait for init_calib_complete before sending commands to the Memory Controller."
+- LED M2: mapped to bit 0 of gpio
 
 ## setup
 ### Digilent FT232H cable drivers
