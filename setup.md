@@ -9,7 +9,16 @@ The example project has the following functionality:
 - Read/Write some registers (GPIO hardcoded "NITE" and "2", XADC Sensors for onboard voltage and temp)
 - blinky one of the onboard LEDs
 
+## blocks
+- DMA/Bridge Subsystem for PCIe: Connection between host and on-card registers (xadc and gpio) and on-card memory (MIG to onboard DDR3)
+- AXI Interconnect 1 - DMA to MIG
+- AXI Interconnect 2 - Registers (XADC and GPIO)
+- MIG - AXI bridge to the onboard DDR3
+
+
+
 ## addressing
+
 See [readme.md](https://github.com/RHSResearchLLC/NiteFury-and-LiteFury/blob/master/Sample-Projects/Project-0/FPGA/readme.md) which shows the register map:
 - `0`: 4 byte hardcoded text of "NITE", from GPIO register block
 - `4`: 4 byte hardcoded value 2, from GPIO register block
