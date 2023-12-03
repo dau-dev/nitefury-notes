@@ -15,8 +15,6 @@ The example project has the following functionality:
 - AXI Interconnect 2 - Registers (XADC and GPIO)
 - MIG - AXI bridge to the onboard DDR3
 
-
-
 ## addressing
 
 See [readme.md](https://github.com/RHSResearchLLC/NiteFury-and-LiteFury/blob/master/Sample-Projects/Project-0/FPGA/readme.md) which shows the register map:
@@ -29,18 +27,26 @@ See [readme.md](https://github.com/RHSResearchLLC/NiteFury-and-LiteFury/blob/mas
 - 0x3000: mapped to XADC sensors
 - 0x10000: mapped to axi quad spi
 
-## Digilent FT232H cable drivers
+## other stuff
+- LED A1
+- LED A2
+- LED A3
+- LED A4
+- LED M2
+
+## setup
+### Digilent FT232H cable drivers
 ```
 cd /opt/Xilinx/Vivado/2022.2/data/xicom/cable_drivers/lin64/install_script/install_drivers
 sudo install_digilent.sh
 ```
 
-## mount XDMA
+### mount XDMA
 ```bash
 sudo modprobe xdma
 ```
 
-## run tests
+### run tests
 ```bash
 ./test_general -i NITE -v 2
 ./test-ddr.py
