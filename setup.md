@@ -56,3 +56,17 @@ sudo modprobe xdma
 
 - `test_general` reads/writes the GPIO registers containing the hard coded "NITE" and the version, and the XADC register with system information like temp and voltage.
 - `test-ddr` writes data through the DMA to the onboard memory, then reads data back through the DMA from the onboard memory. 
+
+## reflash
+
+### disconnect
+
+```bash
+echo 1 > /sys/bus/pci/devices/0000:`lspci | grep Xilinx | cut -c -7`/remove
+```
+
+### rescan
+
+```bash
+echo 1 > /sys/bus/pci/rescan
+```
