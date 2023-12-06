@@ -2,7 +2,8 @@
 - [Main Sample Repo](https://github.com/RHSResearchLLC/NiteFury-and-LiteFury)
 - [Synth / Flash](https://github.com/RHSResearchLLC/NiteFury-and-LiteFury/tree/master/Sample-Projects/Project-0/FPGA)
 - [Flashing guide](https://github.com/Gbps/nitefury-openocd-flashing-guide)
-
+- [Linux PCIe Issue](https://github.com/RHSResearchLLC/NiteFury-and-LiteFury/issues/19)
+  
 ## basic project
 The example project has the following functionality:
 - DMA from host into onboard DDR (DMA/Bridge Subsystem, MIG Generator, AXI interconnect)
