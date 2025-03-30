@@ -12,10 +12,10 @@ from amaranth.lib import io
 
 
 VERILOG_SOURCE = """
-module counter (
+module counter #(parameter DATA_SIZE) (
   input clk,
   input rst,
-  output logic[15:0] out
+  output logic[DATA_SIZE:0] out
 );
 
   always_ff @ (posedge clk) begin
@@ -49,6 +49,7 @@ class Chaser(Elaboratable):
             i_clk=ClockSignal(),
             # i_rst=ResetSignal(),
             o_out=timer,
+            p_DATA_SIZE=timer.shape().width-1,
         )
 
         platform.add_file("counter.sv", VERILOG_SOURCE)
