@@ -7,11 +7,10 @@ from amaranth import (
     Module,
     Instance,
     ClockSignal,
-    ResetSignal,
     Signal,
     Cat,
 )
-from amaranth.lib import io
+from amaranth.lib.io import Buffer
 
 
 class Chaser(Elaboratable):
@@ -20,7 +19,7 @@ class Chaser(Elaboratable):
 
         clk_freq = platform.default_clk_frequency
 
-        leds = [io.Buffer("o", platform.request("led", i, dir="-")) for i in range(4)]
+        leds = [Buffer("o", platform.request("led", i, dir="-")) for i in range(4)]
         m.submodules += leds
 
         size = int(log2(clk_freq // 8))

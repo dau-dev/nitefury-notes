@@ -4,7 +4,6 @@ from amaranth import (
     Module,
     Instance,
     ClockSignal,
-    ResetSignal,
     Signal,
     Cat,
 )
@@ -49,7 +48,7 @@ class Chaser(Elaboratable):
             i_clk=ClockSignal(),
             # i_rst=ResetSignal(),
             o_out=timer,
-            p_DATA_SIZE=timer.shape().width-1,
+            p_DATA_SIZE=timer.shape().width - 1,
         )
 
         platform.add_file("counter.sv", VERILOG_SOURCE)

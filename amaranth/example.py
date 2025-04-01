@@ -2,9 +2,6 @@ from amaranth_boards.nitefury import NitefuryIIPlatform
 from amaranth import (
     Elaboratable,
     Module,
-    Instance,
-    ClockSignal,
-    ResetSignal,
     Signal,
     Cat,
 )
