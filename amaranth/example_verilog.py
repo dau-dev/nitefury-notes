@@ -25,7 +25,6 @@ class Chaser(Elaboratable):
 
         size = int(log2(clk_freq // 8))
         counter = Signal(size, init=0)
-        flops = Signal(4, init=7)
 
         m.submodules.counter = Instance(
             "counter",
