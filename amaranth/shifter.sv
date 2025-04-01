@@ -1,15 +1,16 @@
-module counter #(parameter DATA_SIZE) (
+module shifter #(parameter IN_SIZE, parameter OUT_SIZE) (
   input clk,
-  input rst,
-  output logic[DATA_SIZE-1:0] out
+  input [IN_SIZE-1:0] counter,
+  output logic[OUT_SIZE-1:0] out
 );
 
+initial begin
+  out = ~'b1;
+end
 
-
-  always_ff @ (posedge clk) begin
-    if (rst)
-      out <= 0;
-    else
-      out <= out + 1;
+always_ff @ (posedge clk) begin
+  if (counter == 'b0) begin
+    out <= {out[OUT_SIZE-2:0], out[OUT_SIZE-1]};
   end
+end
 endmodule

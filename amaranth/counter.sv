@@ -1,13 +1,13 @@
-module counter #(parameter DATA_SIZE) (
+module counter #(parameter OUT_SIZE) (
   input clk,
-  input rst,
-  output logic[DATA_SIZE-1:0] out
+  output logic[OUT_SIZE-1:0] out
 );
 
-  always_ff @ (posedge clk) begin
-    if (rst)
-      out <= 0;
-    else
-      out <= out + 1;
-  end
+initial begin
+out = 'b0;
+end
+
+always_ff @ (posedge clk) begin
+  out <= out + 1;
+end
 endmodule
