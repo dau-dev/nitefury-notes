@@ -1,4 +1,4 @@
-module shifter #(parameter IN_SIZE, parameter OUT_SIZE) (
+module shifter #(parameter int IN_SIZE, parameter int OUT_SIZE) (
   input clk,
   input [IN_SIZE-1:0] counter,
   output logic[OUT_SIZE-1:0] out
